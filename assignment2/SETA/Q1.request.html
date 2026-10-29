@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET Request</title>
+</head>
+<body>
+
+    <h1>GET Request Demonstration</h1>
+
+    <button onclick="getData()">Send GET Request</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getData() {
+            fetch("https://jsonplaceholder.typicode.com/posts/1")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("result").innerHTML =
+                        "Response: " + JSON.stringify(data);
+                });
+        }
+    </script>
+
+</body>
+</html>
